@@ -789,6 +789,7 @@ public class TicketSellingController {
 		Seat seat1;
 		for(int i=1;i<=cinemaRoom.getSeatQuantity();i++) {			
 			seat1 = seatService.getSeatById(a);
+			scheduleSeat.setSeat(seat1);
 			scheduleSeat.setScheduleSeatID(b+i);
 			scheduleSeat.setSeatRow(seat1.getSeatRow());
 			scheduleSeat.setSeatColumn(seat1.getSeatColumn());

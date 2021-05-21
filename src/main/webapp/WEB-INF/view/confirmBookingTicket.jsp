@@ -23,7 +23,7 @@
 <body style="background-color: #eff0f3">
 	<div class="box-wrapper container-fluid">
 		<div>
-			<p class="text-show-time">XÁC NHẬN ĐẶT VÉ</p>
+			<p class="text-show-time">XÃ�C NHáº¬N Ä�áº¶T VÃ‰</p>
 		</div>
 
 		<div class="box-movie-center shadow p-3 mb-5 bg-white rounded">
@@ -93,7 +93,7 @@
 							<label class="label-attribute">Total:</label>
 						</div>
 						<div class="col-sm-7">
-							<label class="label-number">${totalPriceString}đ</label>
+							<label class="label-number">${totalPriceString}Ä‘</label>
 						</div>
 					</div>
 					<div class="row">
@@ -164,7 +164,7 @@
 								<label class="label-attribute">Score:</label>
 							</div>
 							<div class="col-sm-7">
-								<label class="label-number">${scoreString}đ</label>
+								<label class="label-number">${scoreString}Ä‘</label>
 							</div>
 						</div>
 						<hr>

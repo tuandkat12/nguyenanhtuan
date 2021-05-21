@@ -22,7 +22,7 @@
 						<th scope="col">Giờ chiếu</th>
 						<th scope="col">Mã vé</th>
 						<th scope="col">Trạng thái</th>
-						<th scope="col">Loại ghế</th>
+						<th scope="col">Mã ghế</th>
 						<th scope="col">Cập nhật</th>
 						<th scope="col">Xóa</th>
 					</tr>
@@ -35,7 +35,7 @@
 							<td>${listScheduleSeat.schedule.scheduleTime}</td>
 							<td>${listScheduleSeat.ticket.ticketID}</td>
 							<td>${listScheduleSeat.seatStatus}</td>
-							<td>${listScheduleSeat.seatType}</td>
+							<td>${listScheduleSeat.seat.seatID}</td>
 							<td align="center"><a
 								href="<c:url value ='/Ticket_Selling/updateLichChieu/${listScheduleSeat.scheduleSeatID}'/>"><button>
 										<i class="fa fa-pencil-square-o" aria-hidden="true"></i>

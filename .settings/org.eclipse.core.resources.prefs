@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/java/doan/movietheater/controller/TicketSellingController.java=UTF-8
 encoding//src/main/java/doan/movietheater/entity/MovieDate.java=UTF-8
+encoding//src/main/webapp/WEB-INF/view/confirmBookingTicket.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/view/updateKhachHang.jsp=UTF-8

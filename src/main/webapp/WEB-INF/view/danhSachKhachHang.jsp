@@ -27,7 +27,7 @@
 						<th scope="col">Địa chỉ</th>
 						<th scope="col">Số điện thoại</th>
 						<th scope="col">Cập nhật</th>
-						<th scope="col">Xoá khách hàng</th>
+						<th scope="col">Xoá</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -7,7 +7,7 @@
 	<!-- <body class="box-body"> -->
 	<div class="box-wrapper container-fluid">
 		<div>
-			<p class="text-show-time">THÊM MỚI LỊCH CHIẾU</p>
+			<p class="text-show-time">THÊM THÔNG TIN PHIM CHO PHÒNG CHIẾU</p>
 		</div>
 		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<form:form
@@ -84,7 +84,7 @@
 		</form:form>
 		<button style="float: right; margin-right: 10px; width: 150px;"
 			class="btn btn-primary"
-			onclick="location.href='<c:url value ='/Ticket_Selling/listNgayChieu'/>';">
+			onclick="location.href='<c:url value ='/Ticket_Selling/listLichChieu'/>';">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>&ensp;Quay lại
 		</button>
 

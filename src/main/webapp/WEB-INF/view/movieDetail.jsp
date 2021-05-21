@@ -84,9 +84,7 @@
 					<hr>
 				</div>
 			</div>
-		</div>
-		
-		
+		</div>		
 		</c:forEach>
 		
 		</div>
