@@ -9,6 +9,25 @@
 				style="font-size: 28px; color: red; font-family: arial; text-align: center; width: 100%;">Không tồn tại dữ liệu tương ứng!</label>
 			</c:if>
 		</div>
+		<div class="col-12">
+            <div class="row">
+            <c:forEach var="movie" items="${listMovie }">
+              <div class="col-4 mb-4">
+                <div class="card">
+                  <img src="<c:url value='/resources/img/${movie.smallImage}'/>" class="card-img-top" style="height: 400px">
+                  <div class="card-body">
+                    <h5 class="card-title" style="text-align: center;"><a href='<c:url value="/Ticket_Selling/trailer/${movie.movieID }" />'>${movie.movieNameVN}</a> </h5>
+                    <p class="card-text"> <p style="width: 100%;
+height: 1.5em;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;">${movie.content}</p> <a href="<c:url value="/Ticket_Selling/trailer/${movie.movieID }"/>">Xem thêm</a> </p>
+                  </div>
+                </div>
+              </div>   
+             </c:forEach>           
+            </div>
+          </div>		
 </div>
 
 </div>

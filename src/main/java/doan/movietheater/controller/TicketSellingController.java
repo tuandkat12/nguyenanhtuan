@@ -92,9 +92,16 @@ public class TicketSellingController {
 	/* Gọi home page */
 	@RequestMapping(value = { "/", "homePage"  })
 	public String homePage(Model model) {
-
+		List<Movie> listMovie = movieService.getListMovie();
+		model.addAttribute("listMovie",listMovie);
 		return "homePage";
 
+	}
+	@GetMapping(value="/Ticket_Selling/trailer/{movieID}")
+	public String trailerPhim(Model model,@PathVariable String movieID) {
+		Movie movie = movieService.getMovieById(movieID);
+		model.addAttribute("movie",movie);
+		return "trailerAVG";
 	}
 
 	/***********************************************************************************************************************/
