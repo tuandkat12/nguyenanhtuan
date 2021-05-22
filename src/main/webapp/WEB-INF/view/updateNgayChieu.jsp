@@ -27,7 +27,7 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Nhập ngày chiếu:</label>
 					<div class="col-sm-8">
-						<form:input path="showDate" name="showDate" id="s howDate"
+						<form:input path="showDate" name="showDate" id="showDate"
 							type="date" class="form-control"></form:input>
 					</div>
 				</div>
@@ -60,4 +60,27 @@
 		</div>
 	</div>
 </div>
+
+<script>
+const input = document.getElementById('showDate');
+const log = document.getElementById('dateName');
+
+input.addEventListener('change', updateValue);
+function updateValue(e) {
+	let date = new Date(e.target.value);
+	let temp = date.getDay();
+	let thu = "";
+	switch(temp){
+		case 0: thu="SUN"; break;
+		case 1: thu="MON"; break;
+		case 2: thu="TUE"; break;
+		case 3: thu="WED"; break;
+		case 4: thu="THU"; break;
+		case 5: thu="FRI"; break;
+		case 6: thu="SAT"; break;
+	}
+  	log.value = thu;
+}
+</script>
+
 <%@include file="include/footer.jsp"%>

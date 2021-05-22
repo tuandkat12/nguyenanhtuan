@@ -34,18 +34,20 @@ import doan.movietheater.service.impl.RolesServiceImpl;
 public class RegisterController {
 	@Autowired
 	AccountServiceImpl accountServiceImpl;
-	
+
 	@Autowired
 	RolesServiceImpl rolesServiceImpl;
-	
+
 	@Autowired
 	MemberServiceImpl memberServiceImpl;
-	
+
 	@GetMapping("/register")
-	public String pageRegister(Model model ) {
+	public String pageRegister(Model model) {
+		List<Roles> listRoles = rolesServiceImpl.getListMovie();
+		model.addAttribute("listRoles1", listRoles);
 		return "register";
 	}
-	
+
 	@PostMapping("/register")
 	public String postRegister(@ModelAttribute("formRegister") AccountDTO accountDTO, Account account, Model model) {
 		Roles roles = rolesServiceImpl.getMovieById(accountDTO.getRoleID());
@@ -73,7 +75,7 @@ public class RegisterController {
 		model.addAttribute("messageRegister", true);
 		return "redirect:/login";
 	}
-	
+
 	@RequestMapping(value = { "/Ticket_Selling/deleteKhachHang/{accountID}" })
 	public String thucHienDeleteKhachHang(Model model, @PathVariable String accountID) {
 		accountServiceImpl.deleteMovie(accountID);
@@ -81,7 +83,7 @@ public class RegisterController {
 		return "redirect:/listKhachHang";
 
 	}
-	
+
 	@RequestMapping(value = { "/Ticket_Selling/deleteNhanVien/{accountID}" })
 	public String thucHienDeleteNhanVien(Model model, @PathVariable String accountID) {
 		accountServiceImpl.deleteMovie(accountID);
@@ -89,31 +91,32 @@ public class RegisterController {
 		return "redirect:/listNhanVien";
 
 	}
-	@GetMapping(value="/Ticket_Selling/updateAccount/{accountID}")
-	public String updateAccount(Model model,  @PathVariable String accountID) {
+
+	@GetMapping(value = "/Ticket_Selling/updateAccount/{accountID}")
+	public String updateAccount(Model model, @PathVariable String accountID) {
 		Account account = accountServiceImpl.getMovieById(accountID);
-		if(account.getRoles().getRoleID()==3) {
-			model.addAttribute("account",account);
+		if (account.getRoles().getRoleID() == 3) {
+			model.addAttribute("account", account);
 			return "updateKhachHang";
 		} else {
-			model.addAttribute("account",account);
+			model.addAttribute("account", account);
 			return "updateNhanvien";
 		}
 	}
-	
-	@PostMapping(value="/Ticket_Selling/thucHienUpdateAccount")
-	public String thucHienUpdateAccount (@ModelAttribute("account") Account account, Model model) {
-		if(account.getRoles().getRoleID()==3) {
+
+	@PostMapping(value = "/Ticket_Selling/thucHienUpdateAccount")
+	public String thucHienUpdateAccount(@ModelAttribute("account") Account account, Model model) {
+		if (account.getRoles().getRoleID() == 3) {
 			account.setDeleteFlag(0);
-			accountServiceImpl.addOrEditMovie(account);		
+			accountServiceImpl.addOrEditMovie(account);
 			model.addAttribute("update", true);
 			return "redirect:/listKhachHang";
 		} else {
 			account.setDeleteFlag(0);
-			accountServiceImpl.addOrEditMovie(account);		
+			accountServiceImpl.addOrEditMovie(account);
 			model.addAttribute("update", true);
 			return "redirect:/listNhanVien";
 		}
-		
+
 	}
 }

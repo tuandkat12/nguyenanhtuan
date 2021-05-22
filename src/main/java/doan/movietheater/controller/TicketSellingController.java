@@ -204,7 +204,7 @@ public class TicketSellingController {
 	}
 
 	/* Goi man hinh them moi phòng chiếu */
-	@RequestMapping(value = { "/themMoiPhongChieu" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/themMoiPhongChieu" })
 	public String themMoiPhongChieu(Model model) {
 		model.addAttribute("room", new CinemaRoom());
 		return "themMoiPhongChieu";
@@ -212,7 +212,7 @@ public class TicketSellingController {
 	}
 
 	/* Thuc hien them mới phòng chiếu */
-	@RequestMapping(value = { "/thucHienThemMoiPhongChieu" }, method = RequestMethod.GET)
+	@PostMapping(value = { "/thucHienThemMoiPhongChieu" })
 	public String thucHienThemMoiPhongChieu(@ModelAttribute("room") CinemaRoom room, Model model) {
 		cinemaRoomService.addOrEditMovie(room);
 
@@ -304,7 +304,7 @@ public class TicketSellingController {
 	}
 
 	/* Thuc hien update phòng chiếu */
-	@RequestMapping(value = { "/thucHienUpdatePhongChieu" })
+	@PostMapping(value = { "/thucHienUpdatePhongChieu" })
 	public String thucHienUpdatePhongChieu(@ModelAttribute("room") CinemaRoom room, Model model) {
 		CinemaRoom roomOld = cinemaRoomService.getMovieById(room.getCinemaRoomID());
 		int seatQuantityOld = roomOld.getSeatQuantity();

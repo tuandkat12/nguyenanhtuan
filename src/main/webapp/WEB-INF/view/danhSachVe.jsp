@@ -40,10 +40,11 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<div class="row" style="height: 20px"></div>
-			<button style="float: right;" type="button" class="btn btn-primary" 
-			onclick="location.href='<c:url value ='/themmoive'/>';">Thêm
-				mới</button>
+			<c:if test="${account.roles.roleID eq 1}">
+				<button style="float: right;" type="button" class="btn btn-primary mt-3"
+					onclick="location.href='<c:url value ='/themmoive'/>';" disabled>Thêm
+					mới</button>
+			</c:if>
 		</div>
 	</div>
 </div>

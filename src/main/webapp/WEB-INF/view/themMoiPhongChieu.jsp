@@ -11,7 +11,7 @@
 		</div>
 		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<form:form action="${contextPath}/Ticket_Selling/thucHienThemMoiPhongChieu"
-			method="GET" modelAttribute="room">
+			method="POST" modelAttribute="room">
 			<div class="form-group row" style="display: none;">
 				<label class="col-sm-4 col-form-label">Mã phòng chiếu:</label>
 				<div class="col-sm-8">
