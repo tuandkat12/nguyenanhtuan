@@ -52,10 +52,13 @@
 			<div class="box-movie row">
 				<div class="col-12" style="align-item: center;">
 					<c:if test="${movie.movieID eq 'MV00001' }">
-					<iframe width="876" height="364" src="https://www.youtube.com/embed/6ZfuNTqbHE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="820" height="364" src="https://www.youtube.com/embed/6ZfuNTqbHE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</c:if>
 					<c:if test="${movie.movieID eq 'MV00002' }">
 						<iframe width="727" height="409" src="https://www.youtube.com/embed/w7pYhpJaJW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</c:if>
+					<c:if test="${movie.movieID eq 'MV00003' }">
+						<iframe width="727" height="409" src="https://www.youtube.com/embed/HmBvoXsU83Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</c:if>
 				</div>
 			</div>
