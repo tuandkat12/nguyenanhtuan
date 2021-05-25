@@ -122,6 +122,13 @@
 							type="file" class="form-control"></form:input>
 					</div>
 				</div>
+				<div class="form-group row">
+					<label class="col-sm-4 col-form-label">Chọn trailer phim:</label>
+					<div class="col-sm-8">
+						<form:input path="trailerMovie" name="trailerMovie" id="trailerMovie"
+							type="file" class="form-control"></form:input>
+					</div>
+				</div>
 				<div class="row" style="height: 20px"></div>
 				<form:button style="float: right; width: 150px;" type="submit"
 					class="btn btn-primary" onclick="myFunction()">

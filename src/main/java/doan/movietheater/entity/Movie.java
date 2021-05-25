@@ -76,7 +76,10 @@ public class Movie implements Serializable {
 
 	@Column(name = "movie_name_vn", length = 255)
 	private String movieNameVN;
-
+	
+	@Column(name = "trailer_movie", length = 255)
+	private String trailerMovie;
+	
 	@Column(name = "lagre_image", length = 255)
 	private String lagreImage;
 
@@ -104,7 +107,7 @@ public class Movie implements Serializable {
 
 	public Movie(String movieID, String actor, String content, String director, int duration, LocalDate fromDate,
 			String movieProductionCompany, LocalDate toDate, String version, String movieNameEnglish,
-			String movieNameVN, String lagreImage, String smallImage) {
+			String movieNameVN, String lagreImage, String smallImage, String trailerMovie) {
 		super();
 		this.movieID = movieID;
 		this.actor = actor;
@@ -119,6 +122,7 @@ public class Movie implements Serializable {
 		this.movieNameVN = movieNameVN;
 		this.lagreImage = lagreImage;
 		this.smallImage = smallImage;
+		this.trailerMovie = trailerMovie;
 	}
 
 	public String getMovieID() {
@@ -223,6 +227,14 @@ public class Movie implements Serializable {
 
 	public void setSmallImage(String smallImage) {
 		this.smallImage = smallImage;
+	}	
+	
+	public String getTrailerMovie() {
+		return trailerMovie;
+	}
+
+	public void setTrailerMovie(String trailerMovie) {
+		this.trailerMovie = trailerMovie;
 	}
 
 	public int getDeleteFlag() {
