@@ -13,6 +13,9 @@
 			<c:if test="${param['error']}">
 				<p style="color: red">Phim - ngày chiếu này đã tồn tại trong hệ thống!</p>
 			</c:if>
+			<c:if test="${param['errorOut']}">
+				<p style="color: red">Phim - ngày chiếu này không nằm trong thời gian chiếu phim!</p>
+			</c:if>
 		</div>
 		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<div style="margin-top: 20px;">
@@ -20,7 +23,7 @@
 				action="${contextPath}/Ticket_Selling/thucHienThemMoiPhim_Ngay"
 				method="GET" modelAttribute="movieDate">
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label">Mã phim:</label>
+					<label class="col-sm-4 col-form-label">Tên phim:</label>
 					<div class="col-sm-8">
 					<!-- path="movie.movieID" -->
 						<form:select path="id.movieID" name="movieID" id="movieID"
@@ -28,7 +31,7 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label class="col-sm-4 col-form-label">Mã ngày chiếu:</label>
+					<label class="col-sm-4 col-form-label">Ngày chiếu:</label>
 					<div class="col-sm-8">
 						<!-- path="showDates.showDateID"  attibute Name đếu làm me hết--> 
 						<form:select path="id.showDateID" name="showDateID"

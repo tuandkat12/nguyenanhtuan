@@ -92,7 +92,8 @@ public class TicketSellingController {
 	/* Gọi home page */
 	@RequestMapping(value = { "/", "homePage"  })
 	public String homePage(Model model) {
-		List<Movie> listMovie = movieService.getListMovie();
+		LocalDate dateNow = LocalDate.now();
+		List<Movie> listMovie = movieService.getMovieByDate(dateNow);
 		model.addAttribute("listMovie",listMovie);
 		return "homePage";
 
@@ -637,10 +638,17 @@ public class TicketSellingController {
 	@RequestMapping(value = { "/thucHienThemMoiPhim_Ngay" })
 	public String thucHienThemMoiPhim_Ngay(@ModelAttribute("movieDate") MovieDate movieDate, Model model) {
 		MovieDateId id = movieDate.getId();
+		Movie movie = movieService.getMovieById(id.getMovieID());
+		ShowDates showDates = showDateService.getShowDatesById(id.getShowDateID());
 		if (id != null && movieDateService.getMovieDateById(id) == null) {
-			movieDateService.addOrEditMovieDate(movieDate);
-			model.addAttribute("insert", true);
-			return "redirect:/listPhim_Ngay";
+			if(showDates.getShowDate().isBefore(movie.getFromDate()) || showDates.getShowDate().isAfter(movie.getToDate())) {
+				model.addAttribute("errorOut", true);
+				return "redirect:/themMoiPhim_Ngay";
+			} else {
+				movieDateService.addOrEditMovieDate(movieDate);
+				model.addAttribute("insert", true);
+				return "redirect:/listPhim_Ngay";
+			}
 		} else {
 			model.addAttribute("error", true);
 			return "redirect:/themMoiPhim_Ngay";

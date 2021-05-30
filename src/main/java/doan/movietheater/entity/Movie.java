@@ -60,13 +60,13 @@ public class Movie implements Serializable {
 	@Column(name = "from_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fromDate;
-
-	@Column(name = "movie_production_company", length = 255)
-	private String movieProductionCompany;
-
+	
 	@Column(name = "to_date")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate toDate;
+
+	@Column(name = "movie_production_company", length = 255)
+	private String movieProductionCompany;
 
 	@Column(name = "version", length = 255)
 	private String version;

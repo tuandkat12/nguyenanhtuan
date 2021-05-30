@@ -8,6 +8,7 @@
 
 package doan.movietheater.service.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,9 @@ public class MovieServiceImpl implements IMovieService {
 		return movieRepository.getMovieByName(movieName);
 	}
 	
+	public List<Movie> getMovieByDate(LocalDate dateNow){
+		return movieRepository.getMovieByDate(dateNow);
+	}
 //	public List<Object[]> listThongkeSLVThang(String movieID) {
 //		return movieRepository.listThongkeSLVtheoThang(movieID);
 //	}
