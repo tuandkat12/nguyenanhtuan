@@ -121,7 +121,7 @@
 		</form:form>
 		<button style="float: right; margin-right: 10px; width: 150px;"
 			class="btn btn-primary"
-			onclick="location.href='<c:url value ='/Ticket_Selling/movieList'/>';">
+			onclick="location.href='<c:url value ='/Ticket_Selling/listNhanVien'/>';">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>&ensp;Quay lại
 		</button>
 	</div>

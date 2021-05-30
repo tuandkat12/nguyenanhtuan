@@ -26,7 +26,7 @@ public interface IMovieRepository extends JpaRepository<Movie, String> {
 	@Query(value = "select * from Movie where movie_name_vn like %?1% or movie_name_english like %?1%", nativeQuery = true)
 	List<Movie> getMovieByName(String movieName);
 	
-	@Query(value="select * from Movie where to_date >=?1", nativeQuery = true)
+	@Query(value="select * from Movie where from_date <=?1 and to_date >=?1", nativeQuery = true)
 	List<Movie> getMovieByDate(LocalDate dateNow);
 	
 //	@Query(value = "SELECT ss.movieID, mv.movie_name_vn, ss.ticketID, COUNT(ss.movieID), Month(sd.show_date) FROM Schedule_Seat ss\r\n"

@@ -33,7 +33,6 @@
 				<div class="form-group row">
 					<label class="col-sm-4 col-form-label">Ngày chiếu:</label>
 					<div class="col-sm-8">
-						<!-- path="showDates.showDateID"  attibute Name đếu làm me hết--> 
 						<form:select path="id.showDateID" name="showDateID"
 							id="showDateID" items="${listShowdateID}" class="form-control"></form:select>
 					</div>
