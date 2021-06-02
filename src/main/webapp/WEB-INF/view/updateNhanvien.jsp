@@ -12,7 +12,7 @@
 		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<form:form
 			action="${contextPath}/Ticket_Selling/thucHienUpdateAccount"
-			method="POST" modelAttribute="account">
+			method="POST" modelAttribute="accountDTO">
 			<div class="form-group row" style="display: none;">
 				<label class="col-sm-4 col-form-label">Mã nhân viên:</label>
 				<div class="col-sm-8">
@@ -99,8 +99,8 @@
 			<div class="form-group row">
 				<label class="col-sm-4 col-form-label">Nhập chức vụ:</label>
 				<div class="col-sm-8">
-					<form:select path="roles.roleID" name="roles.roleID"
-						id="roles.roleID" class="form-control">
+					<form:select path="roleID" name="roleID"
+						id="roleID" class="form-control">
 						<form:option value="1">Admin</form:option>
 						<form:option value="2">Nhan vien</form:option>
 					</form:select>

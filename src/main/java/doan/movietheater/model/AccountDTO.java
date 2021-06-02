@@ -8,14 +8,9 @@
 
 package doan.movietheater.model;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import doan.movietheater.entity.Member;
-
-
-
-
 
 public class AccountDTO {
 	private String accountID;
@@ -38,16 +33,16 @@ public class AccountDTO {
 	private String identityCard;
 
 
-	private String image;
-
-
+	private String newPassword;
+	
+	
 	private String password;
 
 
 	private String phoneNumber;
 
 
-	private LocalDate registerDate;
+	private String registerDate;
 
 
 	private int roleID;
@@ -64,16 +59,15 @@ public class AccountDTO {
 
 	private List<Member> listMember;
 
-	
-	
-	public AccountDTO() {
 
+	public AccountDTO() {
+		// TODO Auto-generated constructor stub
 	}
 
 
 	public AccountDTO(String accountID, String address, String dateOfBirth, String email, String fullName,
-			String gender, String identityCard, String image, String password, String phoneNumber,
-			LocalDate registerDate, int roleID, int status, String userName, int deleteFlag, List<Member> listMember) {
+			String gender, String identityCard, String newPassword, String password, String phoneNumber,
+			String registerDate, int roleID, int status, String userName, int deleteFlag, List<Member> listMember) {
 		super();
 		this.accountID = accountID;
 		this.address = address;
@@ -82,7 +76,7 @@ public class AccountDTO {
 		this.fullName = fullName;
 		this.gender = gender;
 		this.identityCard = identityCard;
-		this.image = image;
+		this.newPassword = newPassword;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.registerDate = registerDate;
@@ -164,13 +158,13 @@ public class AccountDTO {
 	}
 
 
-	public String getImage() {
-		return image;
+	public String getNewPassword() {
+		return newPassword;
 	}
 
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
 
 
@@ -194,12 +188,12 @@ public class AccountDTO {
 	}
 
 
-	public LocalDate getRegisterDate() {
+	public String getRegisterDate() {
 		return registerDate;
 	}
 
 
-	public void setRegisterDate(LocalDate registerDate) {
+	public void setRegisterDate(String registerDate) {
 		this.registerDate = registerDate;
 	}
 
@@ -252,6 +246,6 @@ public class AccountDTO {
 	public void setListMember(List<Member> listMember) {
 		this.listMember = listMember;
 	}
-	
+
 	
 }

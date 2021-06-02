@@ -246,4 +246,14 @@ public class Account implements Serializable {
 		return serialVersionUID;
 	}
 
+	public String dobString() {
+		return ""+ dateOfBirth +"";
+	}
+
+	
+	public String regisString() {
+		return "" + registerDate + "";
+	}
+	
+	
 }

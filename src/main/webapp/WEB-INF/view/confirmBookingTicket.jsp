@@ -93,7 +93,7 @@
 							<label class="label-attribute">Total:</label>
 						</div>
 						<div class="col-sm-7">
-							<label class="label-number">${totalPriceString}Ä‘</label>
+							<label class="label-number">${totalPriceString}đ</label>
 						</div>
 					</div>
 					<div class="row">

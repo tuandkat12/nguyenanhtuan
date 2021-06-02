@@ -47,7 +47,7 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a style="color: white; font-size: 30px" class="navbar-brand fpt"
+					<a style="color: white; font-size: 30px; font-family: cursive;" class="navbar-brand fpt"
 						href="<c:url value ='/Ticket_Selling/'/>"><i
 						class="fa fa-home" aria-hidden="true"></i>&ensp;APPLE MOVIE THEATER</a>
 				</div>
@@ -64,7 +64,7 @@
 						</button>
 					</form>
 				</div>
-				<ul class="nav navbar-nav navbar-right d-flex flex-row">
+				<ul class="nav navbar-nav navbar-right d-flex flex-row" style="font-family: cursive;">
 					<c:if test="${account ne null}">
 						<li class="account-focus" style="color: white;">Hi, ${account.getAccountID()}</li>
 						<div class="row contain-logout text-center" style="display: none;">
@@ -73,7 +73,8 @@
 							<li class="mt-1"><a style="color: white" href="${pageContext.request.contextPath}/register"><i
 							class="fa fa-registered" style="color: white;"></i> Register</a></li>
 							</c:if>
-							<li class="mt-1">Information</li>
+							<li class="mt-1"><a style="color: white" href="${pageContext.request.contextPath}/updatepassword">
+							<i class="fa fa-lock" style="color: white;"></i> Change Password</a></li>
 							<li class="mt-1 mb-2"><a style="color: white" href="${pageContext.request.contextPath}/logout"><i
 							class="fa fa-sign-out" aria-hidden="true" style="color: white;"></i> Logout</a></li> 
 						</ul>
@@ -96,7 +97,7 @@
 				$(this).css("cursor","default");
 				$(".contain-logout").show("slow");
 			});
-			$(".contain-logout").hover(function(){
+			$(".navbar-right").hover(function(){
 			//	$(".contain-logout").show("slow");
 			},function(){
 				$(".contain-logout").hide("slow");
