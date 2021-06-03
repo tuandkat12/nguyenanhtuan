@@ -12,7 +12,7 @@
 		<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 		<form:form
 			action="${contextPath}/Ticket_Selling/thucHienUpdateAccount"
-			method="POST" modelAttribute="accountDTO">
+			method="POST" modelAttribute="account">
 			<div class="form-group row" style="display: none;">
 				<label class="col-sm-4 col-form-label">Mã nhân viên:</label>
 				<div class="col-sm-8">
