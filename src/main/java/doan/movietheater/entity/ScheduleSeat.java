@@ -65,7 +65,7 @@ public class ScheduleSeat implements Serializable {
 	@Column(name = "seat_type")
 	private int seatType;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "ticketID")
 	private Ticket ticket;
 

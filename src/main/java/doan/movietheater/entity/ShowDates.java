@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -52,10 +53,10 @@ public class ShowDates implements Serializable {
 	@Column(name = "delete_flag")
 	private int deleteFlag;
 
-	@OneToMany(mappedBy = "showDates", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "showDates", fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
 	private List<MovieDate> listMovieDate;
 
-	@OneToMany(mappedBy = "showDates", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "showDates", fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
 	private List<ScheduleSeat> listScheduleSeat;
 
 	public ShowDates() {
